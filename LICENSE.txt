@@ -1,0 +1,37 @@
+Tencent is pleased to support the community by making MegaStyle available.
+
+Copyright (C)  2026 Tencent.  All rights reserved. 
+
+MegaStyle is licensed under License Term of MegaStyle. MegaStyle does not impose any additional restrictions beyond those specified in the original licenses of these third-party components. Users are required to comply with all applicable terms and conditions of the original licenses and to ensure that the use of these third-party components conforms to all relevant laws and regulations.
+
+For the avoidance of doubt, MegaStyle refers solely to the code and dataset made publicly available by Tencent in accordance with License Term of MegaStyle. 
+
+Terms of License Term of MegaStyle:
+--------------------------------------------------------------------
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and dataset and associated documentation files (the "Software and Dataset"), to deal in the Software and Dataset without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, and /or sublicense copies of the Software and Dataset, and to permit persons to whom the Software and Dataset is furnished to do so, subject to the following conditions:
+
+- You agree to use the MegaStyle only for research and educational purposes, and refrain from using it for any commercial or production purposes under any circumstances.
+
+- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Dataset.
+
+THE DATASET IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE DATASET OR THE USE OR OTHER DEALINGS IN THE DATASET.
+
+
+
+Dependencies and Licenses:
+
+This project, MegaStyle, builds upon the following dataset but does not contain any portion of it. The dataset remains licensed under its original terms.
+
+In case you believe there have been errors in the attribution below, you may submit the concerns to us for review and correction.
+
+1. huggan/wikiart
+Data files © Original Authors
+
+Terms of use of huggan/wikiart:
+--------------------------------------------------------------------
+Note:
+
+The WikiArt dataset can be used only for non-commercial research purpose.
+The images in the WikiArt dataset were obtained from WikiArt.org.
+The authors are neither responsible for the content nor the meaning of these images.
+By using the WikiArt dataset, you agree to obey the terms and conditions of WikiArt.org.
