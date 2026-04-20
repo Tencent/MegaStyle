@@ -2,7 +2,7 @@
 
 <a href='https://arxiv.org/abs/2604.08364'><img src='https://img.shields.io/badge/arXiv-2604.08364-b31b1b.svg'></a> 
 <a href='https://jeoyal.github.io/MegaStyle/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
-<a href='https://huggingface.co/Gaojunyao/MegaStylet'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
+<a href='https://huggingface.co/Gaojunyao/MegaStyle'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
 <a href='https://huggingface.co/datasets/tencent/MegaStyle-1.4M'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue'></a>
 
 **MegaStyle** is a novel and scalable data curation pipeline that first explores consistent T2I style mapping ability from current large generative models to construct intra-style consistent, inter-style diverse and high-quality style dataset.
@@ -42,7 +42,7 @@ pip install diffsynth==1.1.8
 
 1. Download the pretrained models of [SigLIP](https://huggingface.co/google/siglip-so400m-patch14-384) and [FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev).
 
-2. Download the checkpoints of [MegaStyle-FLUX](https://huggingface.co/Gaojunyao/MegaStyle/blob/main/megastyle_flux.safetensors) and [MegaStyle-Encoder](https://huggingface.co/Gaojunyao/MegaStyle/blob/main/megastyle_encoder.pth) into `./models/`. 
+2. Download the [models](https://huggingface.co/Gaojunyao/MegaStyle) into `./models/`. 
 
 ### Running Inference
 For image style transfer, we provide 50 reference style images from <a href='https://drive.google.com/file/d/1Q_jbI25NfqZvuwWv53slmovqyW_L4k2r/view?usp=drive_link'>StyleBench</a> in `./ref_styles`:
