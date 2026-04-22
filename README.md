@@ -4,6 +4,8 @@
 <a href='https://jeoyal.github.io/MegaStyle/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
 <a href='https://huggingface.co/Gaojunyao/MegaStyle'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
 <a href='https://huggingface.co/datasets/tencent/MegaStyle-1.4M'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue'></a>
+<a href='https://modelscope.cn/models/junyaogao/MegaStyle'><img src='https://img.shields.io/static/v1?label=Model&message=ModelScope&color=purple&logo=ModelScope'></a>
+<a href='https://modelscope.cn/datasets/Tencent-Hunyuan/MegaStyle-1.4M'><img src='https://img.shields.io/static/v1?label=Dataset&message=ModelScope&color=purple&logo=ModelScope'></a>
 
 **MegaStyle** is a novel and scalable data curation pipeline that first explores consistent T2I style mapping ability from current large generative models to construct intra-style consistent, inter-style diverse and high-quality style dataset.
 
