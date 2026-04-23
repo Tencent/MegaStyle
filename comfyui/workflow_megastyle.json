@@ -1,0 +1,191 @@
+{
+  "last_node_id": 10,
+  "last_link_id": 12,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "MegaStyleModelLoader",
+      "title": "Models Loader",
+      "pos": [40, 40],
+      "size": [360, 150],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        { "name": "pipe", "type": "MEGASTYLE_PIPE", "links": [1], "slot_index": 0 }
+      ],
+      "properties": { "Node name for S&R": "MegaStyleModelLoader" },
+      "widgets_values": [
+        "black-forest-labs/FLUX.1-dev",
+        "bfloat16"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "MegaStyleLoRALoader",
+      "title": "MegaStyle LoRA Loader",
+      "pos": [440, 40],
+      "size": [360, 120],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        { "name": "pipe", "type": "MEGASTYLE_PIPE", "link": 1 }
+      ],
+      "outputs": [
+        { "name": "pipe", "type": "MEGASTYLE_PIPE", "links": [2, 3, 4, 5], "slot_index": 0 }
+      ],
+      "properties": { "Node name for S&R": "MegaStyleLoRALoader" },
+      "widgets_values": [
+        "models/megastyle_flux.safetensors",
+        1.0
+      ]
+    },
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "title": "Reference Style",
+      "pos": [40, 240],
+      "size": [320, 314],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        { "name": "IMAGE", "type": "IMAGE", "links": [6], "slot_index": 0 },
+        { "name": "MASK",  "type": "MASK",  "links": null, "slot_index": 1 }
+      ],
+      "properties": { "Node name for S&R": "LoadImage" },
+      "widgets_values": ["00.jpg", "image"]
+    },
+    {
+      "id": 4,
+      "type": "MegaStyleTextEncode",
+      "title": "Text Encode",
+      "pos": [440, 200],
+      "size": [360, 160],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        { "name": "pipe", "type": "MEGASTYLE_PIPE", "link": 2 }
+      ],
+      "outputs": [
+        { "name": "conditioning", "type": "MEGASTYLE_COND", "links": [7], "slot_index": 0 }
+      ],
+      "properties": { "Node name for S&R": "MegaStyleTextEncode" },
+      "widgets_values": ["A bench", 512, true]
+    },
+    {
+      "id": 5,
+      "type": "MegaStyleVAEEncode",
+      "title": "VAE Encode",
+      "pos": [440, 400],
+      "size": [360, 150],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        { "name": "pipe",  "type": "MEGASTYLE_PIPE", "link": 3 },
+        { "name": "image", "type": "IMAGE",          "link": 6 }
+      ],
+      "outputs": [
+        { "name": "latent", "type": "MEGASTYLE_LATENT", "links": [8], "slot_index": 0 }
+      ],
+      "properties": { "Node name for S&R": "MegaStyleVAEEncode" },
+      "widgets_values": [512, 512]
+    },
+    {
+      "id": 6,
+      "type": "MegaStyleSampler",
+      "title": "Flow Matching Scheduler",
+      "pos": [860, 40],
+      "size": [380, 330],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        { "name": "pipe",                  "type": "MEGASTYLE_PIPE",   "link": 4 },
+        { "name": "conditioning",          "type": "MEGASTYLE_COND",   "link": 7 },
+        { "name": "ref_latent",            "type": "MEGASTYLE_LATENT", "link": 8 },
+        { "name": "negative_conditioning", "type": "MEGASTYLE_COND",   "link": null }
+      ],
+      "outputs": [
+        { "name": "latent", "type": "MEGASTYLE_LATENT", "links": [9], "slot_index": 0 }
+      ],
+      "properties": { "Node name for S&R": "MegaStyleSampler" },
+      "widgets_values": [512, 512, 30, 3.5, 42, 3.0, 1.0]
+    },
+    {
+      "id": 7,
+      "type": "MegaStyleVAEDecode",
+      "title": "VAE Decode",
+      "pos": [1280, 40],
+      "size": [320, 100],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        { "name": "pipe",   "type": "MEGASTYLE_PIPE",   "link": 5 },
+        { "name": "latent", "type": "MEGASTYLE_LATENT", "link": 9 }
+      ],
+      "outputs": [
+        { "name": "image", "type": "IMAGE", "links": [10], "slot_index": 0 }
+      ],
+      "properties": { "Node name for S&R": "MegaStyleVAEDecode" },
+      "widgets_values": []
+    },
+    {
+      "id": 8,
+      "type": "SaveImage",
+      "title": "Save Image",
+      "pos": [1280, 180],
+      "size": [480, 390],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        { "name": "images", "type": "IMAGE", "link": 10 }
+      ],
+      "outputs": [],
+      "properties": { "Node name for S&R": "SaveImage" },
+      "widgets_values": ["MegaStyle/megastyle"]
+    }
+  ],
+  "links": [
+    [1,  1, 0, 2, 0, "MEGASTYLE_PIPE"],
+    [2,  2, 0, 4, 0, "MEGASTYLE_PIPE"],
+    [3,  2, 0, 5, 0, "MEGASTYLE_PIPE"],
+    [4,  2, 0, 6, 0, "MEGASTYLE_PIPE"],
+    [5,  2, 0, 7, 0, "MEGASTYLE_PIPE"],
+    [6,  3, 0, 5, 1, "IMAGE"],
+    [7,  4, 0, 6, 1, "MEGASTYLE_COND"],
+    [8,  5, 0, 6, 2, "MEGASTYLE_LATENT"],
+    [9,  6, 0, 7, 1, "MEGASTYLE_LATENT"],
+    [10, 7, 0, 8, 0, "IMAGE"]
+  ],
+  "groups": [
+    {
+      "title": "Loaders",
+      "bounding": [20, 10, 800, 160],
+      "color": "#3f789e",
+      "font_size": 24
+    },
+    {
+      "title": "Conditioning + Reference",
+      "bounding": [20, 180, 800, 400],
+      "color": "#a1309b",
+      "font_size": 24
+    },
+    {
+      "title": "Flow Matching + Decode",
+      "bounding": [840, 10, 940, 580],
+      "color": "#b58b2a",
+      "font_size": 24
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
