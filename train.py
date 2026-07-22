@@ -83,7 +83,7 @@ class FluxTrainingModule(DiffusionTrainingModule):
     def forward(self, data, inputs=None):
         if inputs is None: inputs = self.forward_preprocess(data)
         models = {name: getattr(self.pipe, name) for name in self.pipe.in_iteration_models}
-        loss = self.pipe.training_loss(**models, **inputs)
+        loss = self.pipe.training_mega_loss(**models, **inputs)
         return loss
 
 
