@@ -44,7 +44,7 @@ The dataset is available at:
 The original [MegaStyle-1.4M](https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v1.0) contains 1.4M high-quality images constructed from 170K curated style prompts and 400K content prompts, providing strong intra-style consistency and diverse fine-grained styles.
 
 The dataset is available at:
-- 🤗 [MegaStyle-1.4M (v1.0)](https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v1.0)
+- 🤗 [MegaStyle-1.4M](https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v1.0)
 
 <img src="assets/megastyle1.4M.jpeg">
 
