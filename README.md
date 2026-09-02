@@ -1,9 +1,17 @@
+# MegaStyle++: Scaling Image Style Space through Hierarchical Style Definition
+
+<a href='https://arxiv.org/abs/2609.01423'><img src='https://img.shields.io/badge/arXiv-2609.01423-b31b1b.svg'></a> 
+<a href='https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v2.0'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue'></a>
+
+**MegaStyle++** scales up the style space of MegaStyle through a hierarchical style definition, enabling more fine-grained, diverse, and comprehensive characterization of image styles. Based on this formulation, we construct a large-scale style dataset containing 8M high-quality images and covering 150K overall style identities.
+
+
 # MegaStyle: Constructing Diverse and Scalable Style Dataset via Consistent Text-to-Image Style Mapping
 
 <a href='https://arxiv.org/abs/2604.08364'><img src='https://img.shields.io/badge/arXiv-2604.08364-b31b1b.svg'></a> 
 <a href='https://jeoyal.github.io/MegaStyle/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
 <a href='https://huggingface.co/Gaojunyao/MegaStyle'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
-<a href='https://huggingface.co/datasets/tencent/MegaStyle-1.4M'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue'></a>
+<a href='https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v1.0'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue'></a>
 <a href='https://modelscope.cn/models/junyaogao/MegaStyle'><img src='https://img.shields.io/static/v1?label=Model&message=ModelScope&color=purple&logo=ModelScope'></a>
 <a href='https://modelscope.cn/datasets/Tencent-Hunyuan/MegaStyle-1.4M'><img src='https://img.shields.io/static/v1?label=Dataset&message=ModelScope&color=purple&logo=ModelScope'></a>
 
@@ -14,15 +22,30 @@
 <img src="assets/teaser.png">
 
 ## News
+- [2026/9/2] 🔥 We release a [paper](https://arxiv.org/abs/2609.01423), [dataset](https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v2.0) of MegaStyle++!!!
 - [2026/4/23] 🔥 We release a [Gradio demo](./gradio_demo.py) and [ComfyUI custom nodes](./comfyui/) (with a ready-to-use [workflow](./comfyui/workflow_megastyle.json)) for style transfer using MegaStyle-FLUX.
 - [2026/4/22] 🔥 Thanks to [@olfronar](https://github.com/olfronar)'s contribution! The style score computation using MegaStyle-Encoder is now available on [HF space](https://huggingface.co/spaces/olfronar/megastyle-comparison).
 - [2026/4/21] 🔥 We release the training/inference codes, [models](https://huggingface.co/Gaojunyao/MegaStyle) and [dataset](https://huggingface.co/datasets/tencent/MegaStyle-1.4M) of MegaStyle!!!
 
 ## TODO List
-- [ ] A more diverse and larger-scale style dataset.
+- [x] A more diverse and larger-scale style dataset.
 
-## MegaStyle-1.4M
-[MegaStyle-1.4M](https://huggingface.co/datasets/tencent/MegaStyle-1.4M) is a large-scale style dataset built through a scalable pipeline that leverages consistent text-to-image style mapping of Qwen-Image. It combines 170K curated style prompts with 400K content prompts to generate 1.4M high-quality images that share strong intra-style consistency while covering diverse fine-grained styles.
+## Dataset
+
+### MegaStyle++-8M
+
+[MegaStyle++-8M](https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v2.0) is an expanded and improved version of MegaStyle, containing **8M high-quality style images** with substantially increased style diversity and coverage.
+
+The dataset is available at:
+- 🤗 [MegaStyle++-8M](https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v2.0)
+
+### MegaStyle-1.4M
+
+The original [MegaStyle-1.4M](https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v1.0) contains 1.4M high-quality images constructed from 170K curated style prompts and 400K content prompts, providing strong intra-style consistency and diverse fine-grained styles.
+
+The dataset is available at:
+- 🤗 [MegaStyle-1.4M (v1.0)](https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v1.0)
+
 <img src="assets/megastyle1.4M.jpeg">
 
 
@@ -133,7 +156,7 @@ See [`./comfyui/README.md`](./comfyui/README.md) for the wiring diagram and
 advanced options (CFG, custom negative prompts, etc.).
 
 ### Training
-To train a style transfer model with paired supervision, please download our style dataset, [MegaStyle1.4M](https://huggingface.co/datasets/tencent/MegaStyle-1.4M), and start training with:
+To train a style transfer model with paired supervision, please download our style dataset, [MegaStyle-1.4M](https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v1.0) or [MegaStyle++-8M](https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v2.0), and start training with:
 ```
 bash FLUX.1-dev.sh # FLUX.1-dev-npu.sh for npu
 ```
@@ -147,6 +170,13 @@ If this work is helpful for your research, please consider citing the following 
   title={MegaStyle: Constructing Diverse and Scalable Style Dataset via Consistent Text-to-Image Style Mapping},
   author={Gao, Junyao and Liu, Sibo and Li, Jiaxing and Sun, Yanan and Tu, Yuanpeng and Shen, Fei and Zhang, Weidong and Zhao, Cairong and Zhang, Jun},
   journal={arXiv preprint arXiv:2604.08364},
+  year={2026}
+}
+
+@article{gao2026megastyle++,
+  title={MegaStyle++: Scaling Image Style Space through Hierarchical Style Definition},
+  author={Gao, Junyao and Liu, Sibo and Li, Jiaxing and Sun, Yanan and Zhang, Weidong and Zhang, Jun and Zhao, Cairong},
+  journal={arXiv preprint arXiv:2609.01423},
   year={2026}
 }
 ```
