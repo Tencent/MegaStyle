@@ -6,7 +6,7 @@
 **MegaStyle++** scales up the style space of MegaStyle through a hierarchical style definition, enabling more fine-grained, diverse, and comprehensive characterization of image styles. Based on this formulation, we construct a large-scale style dataset containing 8M high-quality images and covering 150K overall style identities.
 
 
-# MegaStyle: Constructing Diverse and Scalable Style Dataset via Consistent Text-to-Image Style Mapping
+# [NeurIPS 2026] MegaStyle: Constructing Diverse and Scalable Style Dataset via Consistent Text-to-Image Style Mapping
 
 <a href='https://arxiv.org/abs/2604.08364'><img src='https://img.shields.io/badge/arXiv-2604.08364-b31b1b.svg'></a> 
 <a href='https://jeoyal.github.io/MegaStyle/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
@@ -22,6 +22,7 @@
 <img src="assets/teaser.png">
 
 ## News
+- [2026/9/25] 🔥 MegaStyle will appear at NeurIPS 2026 as a Spotlight paper (top 0.8%)!
 - [2026/9/2] 🔥 We release a [paper](https://arxiv.org/abs/2609.01423), [dataset](https://huggingface.co/datasets/tencent/MegaStyle-1.4M/tree/v2.0) of MegaStyle++!!!
 - [2026/4/23] 🔥 We release a [Gradio demo](./gradio_demo.py) and [ComfyUI custom nodes](./comfyui/) (with a ready-to-use [workflow](./comfyui/workflow_megastyle.json)) for style transfer using MegaStyle-FLUX.
 - [2026/4/22] 🔥 Thanks to [@olfronar](https://github.com/olfronar)'s contribution! The style score computation using MegaStyle-Encoder is now available on [HF space](https://huggingface.co/spaces/olfronar/megastyle-comparison).
