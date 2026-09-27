@@ -6,7 +6,7 @@
 **MegaStyle++** scales up the style space of MegaStyle through a hierarchical style definition, enabling more fine-grained, diverse, and comprehensive characterization of image styles. Based on this formulation, we construct a large-scale style dataset containing 8M high-quality images and covering 150K overall style identities.
 
 
-# MegaStyle: Constructing Diverse and Scalable Style Dataset via Consistent Text-to-Image Style Mapping
+# [NeurIPS 2026] MegaStyle: Constructing Diverse and Scalable Style Dataset via Consistent Text-to-Image Style Mapping
 
 <a href='https://arxiv.org/abs/2604.08364'><img src='https://img.shields.io/badge/arXiv-2604.08364-b31b1b.svg'></a> 
 <a href='https://jeoyal.github.io/MegaStyle/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
